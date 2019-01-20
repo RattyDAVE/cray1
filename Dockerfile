@@ -1,4 +1,4 @@
-FROM ubuntu:19.04 as builder
+FROM ubuntu:19.04
 WORKDIR /root
 
 RUN apt-get update -y && apt-get install -y curl unzip tmux
@@ -8,9 +8,6 @@ RUN unzip Cray1.zip
 ADD cos_117.cfg Cray1/cos_117.cfg
 ADD run.sh Cray1/run.sh
 
-CMD    ["/bin/bash"]
+RUN chmod 755 Cray1/run.sh
 
-#FROM scratch
-#COPY --from=bobthebuilder /root/hc /
-
-#CMD ["/hc"]
+CMD    ["/bin/bash", "Cray1/run.sh"]
