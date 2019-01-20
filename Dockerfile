@@ -1,16 +1,13 @@
-FROM ubuntu:18.04 as bobthebuilder
+FROM ubuntu:19.04 as builder
 WORKDIR /root
 
-RUN apt-get update -y && apt-get install -y gcc && \
-        echo "#include <stdio.h>" > helloworld.c && \
-        echo 'int main() {printf("Hello, World!");return 0;}' >> helloworld.c && \
-        gcc -static -o hc helloworld.c && \
-        apt-get -y purge gcc && \
-        apt-get -y autoclean && apt-get -y autoremove && \
-        apt-get -y purge $(dpkg --get-selections | grep deinstall | sed s/deinstall//g) && \
-        rm -rf /var/lib/apt/lists/*
+RUN apt-get update -y && apt-get install -y curl unzip tmux
+RUN curl -L -o Cray1.zip -d "nopassword=1" https://download.cloudatcost.com/download/iou4zmpg2r2qavat827pjnnjb
+RUN unzip Cray1.zip
 
-FROM scratch
-COPY --from=bobthebuilder /root/hc /
+CMD    ["/bin/bash"]
 
-CMD ["/hc"]
+#FROM scratch
+#COPY --from=bobthebuilder /root/hc /
+
+#CMD ["/hc"]
