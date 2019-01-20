@@ -1,4 +1,4 @@
-FROM ubuntu:19.04
+FROM ubuntu:18.04
 WORKDIR /root
 
 RUN apt-get update -y && apt-get install -y curl unzip tmux
