@@ -23,6 +23,40 @@ Use https://github.com/RattyDAVE/cray1/issues to send feedback, issues, comments
 
 ```
 docker run -dit --name cray1 \
+           -p 2222:22
            rattydave/cray1:latest
 ```
 
+## Access
+
+### Method 1
+
+To get the IP address of the running container.
+```
+docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' cray1
+```
+To access the terminal screens either connect via SSH to port 2222 of the running container.
+
+- Username : root
+- Password : root
+
+then when you have the prompt
+
+```
+tmux attach
+```
+
+### Method 2
+
+From the host machine:
+
+```
+docker exec -it cray1 tmux attach
+```
+
+
+
+
+
+
+https://tmuxcheatsheet.com/
