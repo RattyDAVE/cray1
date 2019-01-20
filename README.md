@@ -29,7 +29,7 @@ docker run -dit --name cray1 \
 
 ## Access
 
-### Method 1
+### Connection Method 1
 
 To get the IP address of the running container.
 ```
@@ -46,7 +46,7 @@ then when you have the prompt
 tmux attach
 ```
 
-### Method 2
+### Connection Method 2
 
 From the host machine:
 
@@ -54,9 +54,15 @@ From the host machine:
 docker exec -it cray1 tmux attach
 ```
 
+### Usage
 
+Once in you are presented with tmux running 4 windows.
 
+- 0:cray_xmp_sim* 
+- 20003:ampex80term  
+- 20004:ampex80term  
+- 20006:ampex80term
 
+To ease in the debugging each window has the identification the same as the connection port. 
 
-
-https://tmuxcheatsheet.com/
+To switch between screens press ```CTRL-b``` then ```n```. More information on tmux at https://tmuxcheatsheet.com/
