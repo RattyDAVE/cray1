@@ -18,4 +18,3 @@ CMD    ["/bin/bash", "Cray1/run.sh"]
 
 #ENTRYPOINT ["busybox", "sh"]
 #CMD ["/usr/bin/supervisord"]
-
