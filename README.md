@@ -23,7 +23,7 @@ Use https://github.com/RattyDAVE/cray1/issues to send feedback, issues, comments
 
 ```
 docker run -dit --name cray1 \
-           -p 2222:22
+           -p 2222:22 \
            rattydave/cray1:latest
 ```
 
