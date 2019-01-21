@@ -16,7 +16,7 @@ RUN chmod 755 Cray1/run.sh  && \
     
 EXPOSE 22
 
-CMD    ["/bin/bash", "Cray1/run.sh"]
+CMD    ["Cray1/run.sh"]
 
 #ENTRYPOINT ["busybox", "sh"]
 #CMD ["/usr/bin/supervisord"]
