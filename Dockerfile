@@ -10,10 +10,10 @@ ADD cos_117.cfg Cray1/cos_117.cfg
 ADD run.sh Cray1/run.sh
 
 RUN chmod 755 Cray1/run.sh  && \
-    sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config && \
     echo "root:root" | chpasswd
     
 RUN apk --update --no-cache add bash openssh && rm -rf /var/cache/apk/*
+RUN sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config
     
 EXPOSE 22
 
