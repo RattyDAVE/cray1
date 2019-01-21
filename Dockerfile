@@ -1,7 +1,7 @@
 FROM alpine:edge
 WORKDIR /root
 
-RUN apk --update --no-cache add curl unzip tmux bash && rm -rf /var/cache/apk/*
+RUN apk --update --no-cache add curl unzip tmux bash openssh && rm -rf /var/cache/apk/*
 RUN curl -L -o Cray1.zip -d "nopassword=1" https://download.cloudatcost.com/download/iou4zmpg2r2qavat827pjnnjb
 RUN unzip Cray1.zip
 RUN rm Cray1.zip
@@ -12,8 +12,8 @@ RUN chmod 755 Cray1/run.sh
 
 EXPOSE 22
 
-#CMD    ["/bin/bash", "Cray1/run.sh"]
+CMD    ["/bin/bash", "Cray1/run.sh"]
 
-ENTRYPOINT ["busybox", "sh"]
+#ENTRYPOINT ["busybox", "sh"]
 #CMD ["/usr/bin/supervisord"]
 
