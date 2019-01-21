@@ -1,6 +1,9 @@
 #!/bin/sh
 
-#/usr/sbin/sshd
+/usr/bin/ssh-keygen -A
+yes n | ssh-keygen -t rsa -b 4096 -f  /etc/ssh/ssh_host_key -N '' >/dev/null
+
+/usr/sbin/sshd
 
 PATH=$PATH:bin
 
