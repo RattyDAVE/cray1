@@ -12,7 +12,7 @@ ADD run.sh Cray1/run.sh
 RUN chmod 755 Cray1/run.sh  && \
     echo "root:root" | chpasswd
     
-#RUN apk --update --no-cache add bash openssh && rm -rf /var/cache/apk/*
+RUN apk --update --no-cache add bash openssh && rm -rf /var/cache/apk/*
     
 EXPOSE 22
 
