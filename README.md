@@ -56,10 +56,42 @@ docker exec -it cray1 tmux attach
 Once in you are presented with tmux running 4 windows.
 
 - 0:cray_xmp_sim* 
-- 20003:ampex80term  
-- 20004:ampex80term  
-- 20006:ampex80term
+- 20003:telnet  
+- 20004:telnet  
+- 20006:telnet
 
 To ease in the debugging each window has the identification the same as the connection port. 
 
 To switch between screens press ```CTRL-b``` then ```n```. More information on tmux at https://tmuxcheatsheet.com/
+
+Switch to the window 20003:telent
+
+The status line should say 
+
+IOP-0 KERNEL, VERSION 4.2.2,  Sn302/25, * Leading Edge *
+
+Type ```START @DK0:COS_117 @DK0:INSTALL``` then press ```ENTER```
+
+you should see 
+
+```
+MFINIT: COMPLETE
+CPU <-> MIOP CHANNEL INIT
+CPU <-> MIOP LINKAGE COMPLETE
+START COMPLETE 
+Concentrator ordinal 3  initialized
+Concentrator ordinal 3  processed LOGON from ID FE
+```
+
+Next type ```STATION``` This will start a new terminal on 20000 and switch to it automatically.
+
+The top bar should say ```CRAY STATION.  VERSION 4.2.2, IOS.```
+
+On this terminal type ```LOGON``` you should see ```COS 1.17  02/28/89```
+
+To get a list of commands type ```HELP``` and you can change frames by using ```+``` or ```-```.
+
+For more information see http://modularcircuits.tantosonline.com/blog/?page_id=1386
+
+
+
