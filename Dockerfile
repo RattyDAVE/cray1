@@ -1,7 +1,7 @@
 FROM alpine:edge
 WORKDIR /root
 
-RUN apk --update --no-cache add curl unzip tmux && rm -rf /var/cache/apk/* && \
+RUN apk --update --no-cache add curl unzip tmux busybox-extras && rm -rf /var/cache/apk/* && \
     curl -L -o Cray1.zip -d "nopassword=1" https://download.cloudatcost.com/download/iou4zmpg2r2qavat827pjnnjb  && \
     unzip Cray1.zip  && \
     rm Cray1.zip
