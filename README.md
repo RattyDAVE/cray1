@@ -1,6 +1,3 @@
-# NOT READY TO BE USED YET!
-
-
 # A docker container containing a fully running Cray 1 Supercomputer
 
 Use https://github.com/RattyDAVE/cray1/issues to send feedback, issues, comments and general chat.
