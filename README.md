@@ -91,7 +91,5 @@ On this terminal type ```LOGON``` you should see ```COS 1.17  02/28/89```
 
 To get a list of commands type ```HELP``` and you can change frames by using ```+``` or ```-```.
 
-For more information see http://modularcircuits.tantosonline.com/blog/?page_id=1386
-
-
+For more information see http://modularcircuits.tantosonline.com/blog/?page_id=1386 and a very helpfull video https://youtu.be/_S-RohEFekU?t=625
 
