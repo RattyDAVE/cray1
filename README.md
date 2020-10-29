@@ -24,6 +24,17 @@ docker run -dit --name cray1 \
            rattydave/cray1:latest
 ```
 
+## Auto Update
+
+To automatically update I recomend using watchtower.
+
+```
+docker run -d \
+  --name watchtower \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  v2tec/watchtower 
+```
+
 ## Access
 
 ### Connection Method 1
