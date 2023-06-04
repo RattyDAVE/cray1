@@ -4,7 +4,7 @@ WORKDIR /root
 RUN apk --update --no-cache add curl unzip tmux busybox-extras && rm -rf /var/cache/apk/* && \
     curl -L -o Cray1.zip -d "nopassword=1" https://download.cloudatcost.com/download/iou4zmpg2r2qavat827pjnnjb  && \
     unzip Cray1.zip  && \
-    rm Cray1.zip
+    #rm Cray1.zip
 
 ADD cos_117.cfg Cray1/cos_117.cfg
 ADD run.sh Cray1/run.sh
