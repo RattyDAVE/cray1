@@ -4,10 +4,11 @@ WORKDIR /root
 RUN apk --update --no-cache add curl unzip tmux busybox-extras && rm -rf /var/cache/apk/*
 # curl -L -o Cray1.zip -d "nopassword=1" https://download.cloudatcost.com/download/iou4zmpg2r2qavat827pjnnjb
 ADD  Cray1.zip Cray1.zip
-ADD  Cray1_images.zip Cray1_images.zip
-RUN  unzip Cray1.zip && \
-     cd Cray1 && \
-     unzip ..\Cray1_images.zip
+RUN  unzip Cray1.zip
+
+WORKDIR /root/Cray1
+ADD Cray1_images.zip Cray1_images.zip
+RUN unzip Cray1_images.zip
      
     #rm Cray1.zip
 
